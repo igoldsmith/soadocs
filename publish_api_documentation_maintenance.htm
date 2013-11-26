@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Publish API | Documentation Maintenance</title>
+<link href="../../../../resources/style/reset.css" rel="stylesheet" type="text/css" />
+<link href="../../../../resources/style/base.css" rel="stylesheet" type="text/css" />
+<link href="../../style/document.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="documentation supportContent">
+<h2 id="top">Documentation Maintenance</h2>
+
+<p> Add / Maintain API documentation and restrict visibility of documentation files.</p>
+<div class = "divider1"></div>
+
+
+
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+  <li><a href="#what_is_the_api_documentation_maintenace_process">What is the API documentation maintenance process?</a></li>
+  <li><a href="#who_can_update_api_documentation_content">Who can update API documentation  content?</a></li>
+  <li><a href="#how_do_i_add_API_documentation">How do I add API documentation?</a></li>
+  <li><a href="#can_i_link_to_api_documentation_on_a_different_site">Can I link to API documentation on a different site?</a></li>
+  <li><a href="#what_are_the_content_guidelines_for_API_documentation">What are the content guidelines for API documentation?</a></li>
+  <li><a href="#what_are_the_visibility_rules_for_api_documentation">What are the visibility rules for API documentation?</a></li>
+  <li><a href="#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></li>
+</ol>
+<div class = "divider1"></div>
+
+
+
+<h3><a name="what_is_the_api_documentation_maintenace_process"></a>What is the API documentation maintenance process?</h3>
+<p>All API documentation must be developed and maintained outside of the platform in your own HTML editor. Once your HTML content is ready you can upload it to the site.</p>
+<p>If you add a new version, you can update the existing documentation or create an entirely different set of documents. By default all documentation files reside in the same folder, so it's best to use unique names for new files.</p>
+<p>For more detailed information about working with API documentation files, see <a href="content_guidelines.htm">Content Development Guidelines</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="who_can_update_api_documentation_content"></a>Who can update API documentation content?</h3>
+<p>API documentation can be updated by:</p>
+<ul>
+  <li>An API Admin for that API</li>
+  <li>A Business Admin</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="how_do_i_add_API_documentation"></a>How do I add API documentation?</h3>
+<p>You can add documentation for your API to the <em>API &gt; Documents</em> section by uploading content using the platform <em>File Explorer</em> or by adding API documentation using the Swagger documentation tool that is integrated with the platform. See <a href="content_guidelines.htm">Content Development Guidelines</a> for details.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="Can_i_link_to_api_documentation_on_a_different_site"></a>Can I link to API documentation on a different site?</h3>
+<p>Yes. If you already have a website established for your API and/or your documentation, you can upload a file with some introductory text and a link to your website.</p>
+<p>Remember to use the "target="_blank" attribute on the link so that the documentation site opens in a new window rather than replacing the platform user interface. See <a href="content_guidelines.htm">Content Development Guidelines</a> for details.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="what_are_the_content_guidelines_for_API_documentation"></a>What are the content guidelines for API documentation?</h3>
+<p>The platform provides a detailed set of content development guidelines for API documentation, including publishing, editing, styles, content organization, file upload, testing, and updating. See <a href="content_guidelines.htm">Content Development Guidelines</a> for details.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="what_are_the_visibility_rules_for_api_documentation"></a>What are the visibility rules for API documentation?</h3>
+<p>The following visibility rules apply for API documentation:</p>
+<ul class="usingOrderedList">
+  <li>Documentation for APIs that are designated as Public, and do not use licenses, are visible to all users (including <a href="basics_glossary.htm#anonymoususer">anonymous users</a>).</li>
+  <li>API documents mapped to Public Scopes are visible to all users (including anonymous users).</li>
+  <li>Documentation for APIs that are designated as Private, but do not use licenses, are visible only to API Admins, Business Admins, and users who are members of a group that was invited to the API and accepted the invitation.</li>
+  <li>API documents mapped to Private Scopes are available only to users who have a License that includes the applicable scope. Note that the API documentation must be tagged according to the tagging rules as explained in <a href="#how_do_i_control_visibility_of_api_documentation_files">How do I restrict visibility of API documentation files?</a> below. If scopes are private and documentation is not tagged, the documentation is not visible even to users who have visibility to the private scopes.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="how_do_i_control_visibility_of_api_documentation_files"></a>How do I control visibility of API documentation files?</h3>
+<p>The platform offers a series of visibility filters that can be used to restrict visibility of API documentation files or portions of content within individual files. When your API documentation is tagged with the appropriate filters, the platform displays documentation to a specific user based on the licenses, scopes, and operations for which that user has a licensed contract with the API.</p>
+<p>When a user who has approved access to an API selects the <em>Documents</em> menu link in the <em>APIs</em> section to view the documentation, the user sees the designated portion of the API documentation based on the scopes and operations assigned to the licenses that the user has requested (and been granted). Content for all other licenses is hidden.</p>
+<p>When using this feature, make sure that all links associated with documentation sections being filtered are also tagged accordingly. If there are visible links to hidden content, from the user's perspective the links will appear to be broken.</p>
+<p><em>Note: Visibility filters assigned to documentation are implemented on the browser side only. This feature is considered a &quot;personalization&quot; feature, not authorization.</em></p>
+<p>Activities relating to documentation tagging and visibility include:</p>
+<ul>
+  <li><a href="#using_metadata_xml">Using the metadata.xml file</a></li>
+  <li><a href="#setup_doc_toc">Setting up the documentation Table of Contents</a></li>
+  <li><a href="#using_doc_tags">Using documentation tags</a></li>
+  <li><a href="#using_multiple_tags">Using multiple tags</a></li>
+</ul>
+<h4><a name="using_metadata_xml"></a>Using the Metadata.xml File</h4>
+<p>This option allows you to restrict visibility of API documentation and downloadable files in the<em> API &gt; Documents</em> folder by creating a metadata.xml file that includes one or more regular expressions filtering documentation by any combination of the following:</p>
+<ul>
+  <li>License</li>
+  <li>Scope</li>
+  <li>Operation</li>
+  <li>File Extension</li>
+</ul>
+<p>If you do not specify a metadata.xml file, all documentation displays for all API versions. To apply filters, apply the desired filters to the complete documentation set. You can then add additional filters on a per-version basis (See <a href="#docfilter_byapiversion">Filter by API Version</a> below).</p>
+
+
+<p>In the <strong>metadata.xml</strong> file, include each filter you would like to apply in &lt;metadata&gt; &lt;/metadata&gt; tags. The filters are executed in sequential order. In the file, organize your filters in this order:</p>
+<ul>
+  <li>First, filters that apply to all documents</li>
+  <li>Next, API Version filters</li>
+</ul>
+<p>The example below shows a simple metadata.xml file with one API version, one operation, one scope, and one license.</p>
+<p><strong>Note</strong>: In setting up your metadata.xml, make sure you represent the names of referenced objects, such as license, scope, or file names, exactly. Make sure the case matches.</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;metadataconfig xmlns="http://soa.com/xsd/metadataconfig/1.0"&gt;
+  &lt;metadata&gt;
+    &lt;APIVersionID xmlns="http://soa.com/xsd/api/1.0"&gt;apiversion12345.open&lt;/APIVersionID&gt;
+    &lt;target&gt;documents/index.html&lt;/target&gt;
+    &lt;roles&gt;
+      &lt;role name="InvitedUser"/&gt;
+    &lt;/roles&gt;
+  &lt;/metadata&gt;
+  &lt;metadata&gt;
+    &lt;target&gt;documents/operation-name.html&lt;/target&gt;
+    &lt;operations&gt;
+      &lt;operation name="operation-name"/&gt;
+    &lt;/operations&gt;
+  &lt;/metadata&gt;
+  &lt;metadata&gt;
+    &lt;target&gt;documents/public-scope-1.html&lt;/target&gt;
+    &lt;scopes&gt;
+      &lt;scope name="public-scope-1"/&gt;
+    &lt;/scopes&gt;
+  &lt;/metadata&gt;
+  &lt;metadata&gt;
+    &lt;target&gt;documents/public-license-1.html&lt;/target&gt;
+    &lt;licenses&gt;
+      &lt;license name="public-license-1"/&gt;
+    &lt;/licenses&gt;
+&lt;/metadataconfig&gt;
+</pre>
+
+
+<h5><a name="docfilter_bylicense"></a>Filter by License</h5>
+<p>The &lt;licenses&gt; filter allows you to specify one or more license names in the metadata.xml file using the &lt;license name&gt; parameter. The license names represent those selected as part of an API Access Request. If a license selected in the <em>Restricted License</em> section is part of a defined license filter, access to view the API documentation will be granted after the API Access Request is approved.</p>
+<pre>
+&lt;metadata&gt;
+  &lt;licenses&gt;
+    &lt;license name="license1"&gt;
+    &lt;/license&gt;
+    &lt;license name="license2"&gt;
+    &lt;/license&gt;
+  &lt;/licenses&gt;
+&lt;/metadata&gt;
+</pre>
+
+
+
+<h5><a name="docfilter_byscope"></a>Filter by Scope</h5>
+<p>The &lt;scopes&gt; filter allows you to specify one or more scopes using the &lt;scope name&gt; parameter. The scope names represent ones you mapped to the current API using the <strong>Scope Mapping</strong> function on the <em>API &gt; Details</em> page.</p>
+<pre>
+&lt;metadata&gt;
+  &lt;scopes&gt;
+    &lt;scope name="scope1"&gt;
+    &lt;/scope&gt;
+    &lt;scope name="scope2"&gt;
+    &lt;/scope&gt;
+  &lt;/scopes&gt;
+&lt;/metadata&gt;
+</pre>
+
+
+
+<h5><a name="docfilter_byoperation"></a>Filter by Operation</h5>
+<p>The &lt;operations&gt; filter allows you to specify one or more operations using the &lt;operation name&gt; parameter. The operation names represent ones you mapped to the current API using the<strong> Scope Mapping</strong> function on the <em>API &gt; Details</em> page.</p>
+<pre>
+&lt;metadata&gt;
+  &lt;operations&gt;
+    &lt;operation name="operation1"&gt;
+    &lt;/operation&gt;
+    &lt;operation name="operation2"&gt;
+    &lt;/operation&gt;
+  &lt;/operations&gt;
+&lt;/metadata&gt;
+</pre>
+
+
+
+
+<h5><a name="docfilter_bydocumenttype"></a>Filter by Document Type</h5>
+<p>You can filter the document types you would like users to be able to see in the documents folder by specifying a regular expression in the metadata.xml file.</p>
+<p><em>Note: If you do not specify a document type (i.e., the default), all documents/graphics will display in the /Documents folder.</em></p>
+<p>For example, if you want only html files to display in the /Documents folder you could specify:</p>
+<pre>
+&lt;target&gt;.*\.html&lt;/target&gt;
+</pre>
+
+
+<p>Or, if you want to filter so that authorized users can see only Microsoft Word .docx files in the /Documents folder, you could specify the following:</p>
+<pre>
+&lt;target&gt;.*\.docx&lt;/target&gt;
+</pre>
+
+
+<p>You can also specify multiple filters. If you want to filter and display HTML and JPG files in the /Documents folder you could specify:</p>
+<pre>
+&lt;target&gt;.*\.html&lt;/target&gt;
+&lt;target&gt;.*\.jpg&lt;/target&gt;
+</pre>
+
+
+
+<p>This expression should be placed after the &lt;metadata&gt; tag if your XML file does not include an API Version filter. If it does include an API Version filter, the expression should be placed before the filter.</p>
+
+
+
+<h3><a name="docfilter_byfile"></a>Filter by File</h3>
+<p>You can filter documents based on a specific file to display in the documents folder by specifying a regular expression.</p>
+<p>For example, you might have a PDF file you would like to present in the /Documents section. Using this example you would specify the following:</p>
+<pre>
+&lt;target&gt;apis/sample.pdf&lt;/target&gt;
+</pre>
+
+
+
+<p>This expression should be placed after the &lt;metadata&gt; tag if your XML file does not include an API Version filter. If it does include an API Version filter, the expression should be placed before the filter.</p>
+
+
+
+<h3><a name="docfilter_byapiversion"></a>Filter by API Version</h3>
+<p>In addition to applying filters to all API documentation, you can further filter an API version using the &lt;api:APIVersionID&gt; filter. You configure this filter by extracting the API Version ID plus tenant name (for example, apiversion400.open) from the <em>API &gt; Documents</em> URL of your platform.</p>
+<p><strong>Example URL:</strong></p>
+<pre>/api100.open/versions/apiversion400.open/documents</pre>
+
+
+<p>In your metadata XML file the resulting entry will look similar to the following:</p>
+<pre>
+&lt;metadata&gt;
+  &lt;api:APIVersionID&gt;apiversion400.atmosphere&lt;/api:APIVersionID&gt;
+      [API documentation filter goes here]
+&lt;/metadata&gt;
+</pre>
+
+
+
+<p>This example illustrates filtering by API Version plus a specific document:</p>
+<pre>
+&lt;metadata&gt;
+  &lt;api:APIVersionID&gt;apiversion400.atmosphere&lt;/api:APIVersionID&gt;
+    &lt;target&gt;apis/sample.htm&lt;/target&gt;
+      [API documentation filter goes here]
+&lt;/metadata&gt;
+</pre>
+
+
+<p>This example illustrates filtering by API Version plus a specific document type:</p>
+<pre>
+&lt;metadata&gt;
+  &lt;api:APIVersionID&gt;apiversion400.atmosphere&lt;/api:APIVersionID&gt;
+    &lt;target&gt;apis/*\.html&lt;/target&gt;
+      [API documentation filter goes here]
+&lt;/metadata&gt;
+</pre>
+
+
+
+<h3><a name="setup_doc_toc"></a>Table of Contents</h3>
+<p>If you have selected a set of files to display in the Table of Contents that displays in the left navigation in the <em>API &gt; Document</em>s section of the platform, the content dynamically displays based on the filters specified for all API documentation or for a specified  API version.</p>
+
+
+
+<h3>Upload Metadata XML File</h3>
+<p>After configuring your metadata XML file, upload it to the <em>API &gt; Documents</em> folder (i.e., in the /content/api/&lt;api name&gt;/documents folder).</p>
+<p><img src="upload metadata xml.jpg" width="358" height="243" alt="Upload metadata file to /documents folder" /></p>
+<p>If your API is private, app developers do not see the API documentation unless they have membership in a group that has access to the API. If a developer makes an API access request and the request is approved, and the License applicable to the API access contract includes access to additional content as defined in the metadata file, the developer can then see the additional documentation in the <em>API &gt; Documents</em> section.</p>
+<p>You can use the Metadata File method on its own or in combination with Documentation Tags (described in the next section).</p>
+<p>To  upload the metadata.xml file  via the <em>File Explorer</em>:</p>
+<ol class="usingOrderedList">
+  <li>Navigate to <em>API &gt; API Name &gt; Documents</em>.</li>
+  <li>Click the <em>File Explorer </em> icon (in upper-left corner of the documentation panel)</li>
+  <li>In <em>File Explorer</em>, click <strong>Upload a File</strong>.</li>
+  <li>In the <strong>File Upload</strong> box, navigate to the location of the file you want to upload. Choose the file, and then click <strong>Open</strong>.</li>
+</ol>
+<h4><a name="using_doc_tags"></a>Using Documentation Tags</h4>
+<p>This option allows you to restrict visibility of specific portions of a document using a series of tags that display document content on the API &gt; Documents page based on a license assigned to an API, a scope defined within a license, or an operation defined within a scope.</p>
+<p><em>Note: You can use the Metadata File method (described in the previous section) on its own or in combination with Documentation Tags.</em></p>
+<p>The following tags are supported:</p>
+<ul>
+  <li><a href="#doctags_showforlicense">showforlicense</a></li>
+  <li><a href="#doctags_showforscope">showforscope</a></li>
+  <li><a href="#doctags_showforoperation">showforoperation</a></li>
+  <li><a href="#doctags_showforanonymoususer">showforanonymoususer</a></li>
+  <li><a href="#doctags_showforloggedinuser">showforloggedinuser</a></li>
+</ul>
+<p> Note that tags are mutually exclusive and cannot be nested.</p>
+
+
+
+<p><em><strong>Examples:</strong></em></p>
+<p>The following examples illustrate the platform UI configuration and tag requirements for the API documentation HTML file to restrict documentation visibility for license, scopes, and operations.</p>
+<p><em>NOTE: When tagging files, make sure you apply the same tags to any links to tagged sections.</em></p>
+
+<ul class="usingOrderedList">
+  <li><strong>showforlicense</strong>&#8212;This tag type restricts documentation based on a license name. Only app developers who have the specified license can see the tagged portion of the documentation.</li>
+  <li><strong>showforscope</strong>&#8212;This tag type restricts documentation based on a scope name. Only app developers who have a license that includes the specified scope can see the tagged portion of the documentation.</li>
+  <li><strong>showforoperation</strong>&#8212;This tag type restricts documentation based on an operation name. Only app developers who have a license that includes the specified operation can see the tagged portion of the documentation.</li>
+</ul>
+
+
+
+<h3>Tag Rules</h3>
+<p>When tagging your API documentation, the following rules apply:</p>
+<p><em>Header:</em></p>
+<p>The following header information should be included in each HTML file.</p>
+<ol class="usingOrderedList">
+  <li>Add xmlns:soa=&quot;http://soa.com&quot; to the html tag. Your entry should look similar to the following: <!--{{<span class="apidoc_red">this is a partial example...?</span>}}-->
+<pre>
+&lt;html lang=&quot;en&quot; xmlns:soa=&quot;http://soa.com
+</pre>
+</li>
+  <li>Add the following lines to the &lt;head&gt; tag of your HTML file, after the &lt;title&gt; tag::
+    <pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;
+<br />&lt;script language=&quot;javascript&quot; src=&quot;/resources/thirdparty/jquery/jquery-1.8.0.min.js&quot;
+  type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+<br />&lt;script language=&quot;javascript&quot; src=&quot;/resources/javascript/dynamic_docs.js&quot;
+  type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
+</li>
+</ol>
+
+
+
+<h3><a name="doctags_showforlicense"></a>showforlicense</h3>
+<p>To restrict documentation visibility by license, specify the license names in the <strong>showforlicense</strong> tag, adding one or more license names separated by commas. When an App Developer submits an API Access request for a specified license, and the request is granted, the developer can view the API documentation.</p>
+<pre>&lt;soa:showforlicense licenseNames=&quot;Gold Level&quot;&gt;
+  &lt;div class=&quot;soa-ui-cm-dynamic-docs&quot;&gt;
+    &lt;p&gt;&lt;a href=&quot;About_GoldLicense.htm&quot;&gt;About the Gold-Level License&lt;/a&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforlicense&gt;
+</pre>
+
+
+
+<h3><a name="doctags_showforscope"></a>showforscope</h3>
+<p>To restrict documentation visibility by scope, select the API-wide Mapping option or <em>Operation-specific Mapping</em> option in<em> API Details > Scope Mapping >Edit Scope Details</em>. In the API documentation HTML file, configure the tags as follows, adding one or more operation names separated by commas.</p>
+
+
+<pre>&lt;soa:showforscope scopeNames=&quot;public-scope-1, public-scope-2&quot;&gt;
+  &lt;div class=&quot;soa-ui-cm-dynamic-docs&quot;&gt;
+    &lt;a href=&quot;two-public-scopes.html&quot;&gt;two-public-scopes.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+  &lt;/div&gt;
+&lt;/soa:showforscope&gt;<br />
+</pre>
+
+
+
+<p><img src="showforscope_operationspecificmapping.jpg" width="624" height="100" alt="Operation-Specific Scope Mapping using showforscope tag" /></p>
+<p><img src="showforscope_apiwidemapping.jpg" width="624" height="83" alt="" /></p>
+<p>Figure. API-wide Mapping using showforscope tag</p>
+
+
+<h3><a name="doctags_showforoperation"></a>showforoperation</h3>
+<p>To restrict documentation visibility by operation, select the Operation-specific Mapping option in <em>API Details > Scope Mapping > Edit Scope Details</em>. In the API documentation HTML file, configure the tags as follows, adding one or more operation names separated by commas.</p>
+<pre>
+&lt;soa:showforoperation operationNames=&quot;addPayment&quot;&gt;
+  &lt;div class=&quot;soa-ui-cm-dynamic-docs&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;addPayment.html&quot;&gt;Documentation for addPayment operation&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforoperation&gt;</pre>
+
+
+
+<h3><a name="doctags_showforanonymoususer"></a>showforanonymoususer</h3>
+<p>If there is some content in your documentation that you want to share broadly to all viewers, whether logged in or not, you can apply the showforanonymoususer tag, as shown below.</p>
+<pre>
+&lt;soa:showforanonymoususer&gt;
+  &lt;div class=&quot;soa-ui-cm-dynamic-docs&quot;&gt;
+    &lt;div class=&quot;get-started&quot;&gt;
+      &lt;p&gt;&lt;a class=&quot;button soa-ui-cm-button&quot; href=&quot;#/home/signup&quot;&gt;Sign Up&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/soa:showforanonymoususer&gt;</pre>
+
+
+
+<h3><a name="doctags_showforloggedinuser"></a>showforloggedinuser</h3>
+<p>If there is some content in your documentation that you want to share with all platform users who are logged in, you can apply the showforloggedinuser tag, as shown below.</p>
+<pre>
+&lt;soa:showforloggedinuser&gt;
+  &lt;div class="soa-ui-cm-dynamic-docs"&gt;
+    &lt;div class="get-started"&gt;
+      &lt;p&gt;&lt;a class="button soa-ui-cm-button" href="#/home/signup"&gt;Sign Up&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/soa:showforloggedinuser&gt;
+</pre>
+
+
+
+<h3><a name="using_multiple_tags"></a>Using Multiple Tags</h3>
+<p> You can specify multiple entries (licenses, scopes, operations) and separate them with a comma. An example is shown below.</p>
+<pre>&lt;soa:showforscope scopeNames=&quot;public-scope-1, private-scope-1&quot;&gt;<br />&lt;div class=&quot;soa-ui-cm-dynamic-docs&quot;&gt;<br />  &lt;p&gt;&lt;a href=&quot;public-and-private-scope.html&quot;&gt;public-and-private-scope.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;<br />&lt;/soa:showforscope&gt;</pre>
+
+
+
+<h3>Test</h3>
+<p>After you have finished tagging, test your documentation by performing the following checks:</p>
+<ul class="usingOrderedList">
+  <li>Verify that the Header, Div tags, and visibility tags are properly configured in your HTML files.</li>
+  <li>Verify that links to tagged sections are also tagged.</li>
+  <li>Upload HTML files (and associated graphics, PDFs, etc.) to the <em>API &gt; Documents</em> section of the platform using the <strong>File Manager</strong>.
+<p><img src="upload_tagged_files.jpg" width="385" height="254" alt="" /></p></li>
+  <li>Verify that Licenses, Scopes, and Operations you specified in the visibility tags are properly selected on the <em>Scope Mapping &gt; Edit API Scope</em> page. If Licenses, Scopes, or Operations are not visible, consult with your Site Administrator.</li>
+  <li>Verify that licenses specified in the visibility tags are available in the <em>API Access Wizard</em>. To do this you can <strong>Create a New App</strong> and submit an API Access Request by selecting <strong>Access</strong> on the <em>API &gt; Details</em> page.</li>
+  <li>Create several test user accounts and request API access using various scenarios that will illustrate visibility and restricted visibility of API documentation in the <em>API &gt; Documents</em> section.</li>
+  <li>If you make changes to Licenses, Scopes, or Operations, update the API documentation HTML files accordingly.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+<div class = "divider1"></div>
+
+
+
+</div>
+</body>
+</html>
