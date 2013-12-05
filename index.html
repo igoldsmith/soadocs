@@ -40,12 +40,12 @@ navigation: cm-reference-left-nav
 						<!-- col 1 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/cm/getting-started.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a></h4>
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'gs' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'gs' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -58,12 +58,12 @@ navigation: cm-reference-left-nav
 						<!-- col 2 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/cm/reference.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a></h4>
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'ref' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'ref' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -76,12 +76,12 @@ navigation: cm-reference-left-nav
 						<!-- col 3 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/cm/learning.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a></h4>
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'learn' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'cm' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'learn' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'cm' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -103,12 +103,12 @@ navigation: cm-reference-left-nav
 						<!-- col 1 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/ag/getting-started.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'gs' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'gs' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -121,12 +121,12 @@ navigation: cm-reference-left-nav
 						<!-- col 2 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/ag/reference.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'ref' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'ref' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -139,12 +139,12 @@ navigation: cm-reference-left-nav
 						<!-- col 3 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/ag/learning.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'learn' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'ag' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'learn' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'ag' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -166,12 +166,12 @@ navigation: cm-reference-left-nav
 						<!-- col 1 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/lm/getting-started.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'gs' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'gs' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'gs' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -184,12 +184,12 @@ navigation: cm-reference-left-nav
 						<!-- col 2 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/lm/reference.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'ref' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'ref' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'ref' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
@@ -202,12 +202,12 @@ navigation: cm-reference-left-nav
 						<!-- col 3 index starts here -->
 						<li class="soa-ui-dc-detail-column">
 							<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/lm/learning.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a></h4><!-- change href -->
-							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'learn' and ctr.size < 3 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == 'lm' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 							        </a>
-							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'learn' and ctr.size < 2 %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
+							      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == 'lm' and p.category == 'learn' and ctr.size < 3 and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
 							      <li class="soa-ui-dc-detail-column-item">
 							        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}">
 							          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
