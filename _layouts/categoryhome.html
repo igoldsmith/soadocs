@@ -2,24 +2,18 @@
 <html lang="en">
 	{% include header %}
 	<body>
-
 		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
 			{% include logo %}
-			{% include ag-topnav %}
+			{% include prod-topnav %}
 		</div>
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
-			{% case page.category %}
-			{% when 'gs' %}
-			{% include ag-gs-leftnav %}
-			{% when 'ref' %}
-			{% include ag-ref-leftnav %}
-			{% else %}
-			{% include ag-learn-leftnav %}
-			{% endcase %}
+			{% include prod-leftnav %}
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
+					<h2 id="top">Get Started</h2>
 					{{ content }}
-				</div>
+					<div class = "divider1"></div>
+					{% include catalog %}
 				<!-- main content ends here -->
 			</div>
 			{% include footer %}
