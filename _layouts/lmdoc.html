@@ -5,16 +5,16 @@
 
 		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
 			{% include logo %}
-			{% include cm-topnav %}
+			{% include lm-topnav %}
 		</div>
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			{% case page.category %}
 			{% when 'gs' %}
-			{% include cm-gs-leftnav %}
+			{% include lm-gs-leftnav %}
 			{% when 'learn' %}
 			{% include lm-learn-leftnav %}
 			{% else %}
-			{% include cm-ref-leftnav %}
+			{% include lm-ref-leftnav %}
 			{% endcase %}
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
