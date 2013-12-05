@@ -4,16 +4,16 @@
 	<body>
 
 		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
-			<h1 class="soa-ui-dc-logo-container">
-				<a href="{{ site.baseurl }}/" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
-			</h1>
-
-			{% include cm-top-nav %}
-
+			{% include logo %}
+			{% include cm-topnav %}
 		</div>
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
-			{% include {{page.navigation}} %}
-
+			{% case page.category %}
+			{% when 'gs' %}
+			{% include cm-gs-leftnav %}
+			{% else %}
+			{% include cm-ref-leftnav %}
+			{% endcase %}
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
 					{{ content }}
