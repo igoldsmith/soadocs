@@ -1,2 +1,4 @@
 baseurl: /soadocs
 MAXWEIGHT: 50
+lunr_search:
+  excludes: [rss.xml, atom.xml]
