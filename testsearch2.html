@@ -39,7 +39,7 @@ navigation: cm-reference-left-nav
 <script type="text/javascript">
   $(function() {
     $('#search-query').lunrSearch({
-      index:    '/search.json',
+      index:    '{{ site.baseurl }}/search.json',
       results:  '#search-results',
       entries:  '.entries',
       template: '#search-results-template'
