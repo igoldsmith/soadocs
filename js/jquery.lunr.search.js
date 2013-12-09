@@ -49,6 +49,7 @@
       return lunr(function() {
         this.field('title', { boost: 10 });
         this.field('body');
+        this.field('description');
         this.ref('id');      
       });
     };

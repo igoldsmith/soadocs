@@ -626,3 +626,13 @@ a.soa-ui-dc-container-main-left-nav-item-link {
   top: 0;
   right: 0;
 }
+
+.inline-search-div {
+  background-color: white;
+  position: absolute;
+  top: 58px;
+  right: -4px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+}

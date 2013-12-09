@@ -6,3 +6,15 @@
 					<li class="soa-ui-dc-footer-item">&copy;2013, SOA Software, Inc. All Rights Reserved.</li>
 				</ul>
 			</div>
+
+			<script type="text/javascript">
+			  $(function() {
+			  	$(".soa-control-ui-tabs").tabs();
+			    $('#search-query').lunrSearch({
+			      index:    '{{ site.baseurl }}/search.json',
+			      results:  '#search-results',
+			      entries:  '.entries',
+			      template: '#search-results-template'
+			    });
+			  });
+			</script>

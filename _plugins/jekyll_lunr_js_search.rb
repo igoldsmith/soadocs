@@ -45,13 +45,15 @@ module Jekyll
           :title => entry.title, 
           :url => entry.url,
           :date => entry.date,
+          :type => entry.type,
+          :description => entry.description,
           :categories => entry.categories,
           :body => entry.body
         }
         
         puts 'Indexed ' << "#{entry.title} (#{entry.url})"
       end
-      
+
       json = JSON.generate({:entries => index})
       
       # Create destination directory if it doesn't exist yet. Otherwise, we cannot write our file there.
@@ -121,32 +123,47 @@ module Jekyll
     end
     
     def self.create_from_page(page, renderer)
-      title, url = extract_title_and_url(page)
+      title, url, type, description = extract_title_description_and_url(page)
       body = renderer.render(page)
       date = nil
       categories = []
       
-      SearchEntry.new(title, url, date, categories, body)
+      SearchEntry.new(title, url, date, type, description, categories, body)
     end
     
     def self.create_from_post(post, renderer)
-      title, url = extract_title_and_url(post)
+      title, url, type, description = extract_title_description_and_url(post)
       body = renderer.render(post)
       date = post.date
       categories = post.categories
       
-      SearchEntry.new(title, url, date, categories, body)
+      SearchEntry.new(title, url, date, type, description, categories, body)
     end
 
-    def self.extract_title_and_url(item)
+    def self.extract_title_description_and_url(item)
       data = item.to_liquid
-      [ data['title'], data['url'] ]
+      if data['type'] != 'pdf'
+        type = 'document'
+      else
+        type = 'pdf'
+      end
+      [ data['title'], data['url'], type, data['description'] ]
     end
 
-    attr_reader :title, :url, :date, :categories, :body
+    def self.extract_type(item)
+      data = item.to_liquid
+      if data['type'] != 'pdf'
+        type = 'document'
+      else
+        type = 'pdf'
+      end
+      type
+    end
+
+    attr_reader :title, :url, :date, :type, :description, :categories, :body
     
-    def initialize(title, url, date, categories, body)
-      @title, @url, @date, @categories, @body = title, url, date, categories, body
+    def initialize(title, url, date, type, description, categories, body)
+      @title, @url, @date, @type, @description, @categories, @body = title, url, date, type, description, categories, body
     end
     
     def strip_index_suffix_from_url!
