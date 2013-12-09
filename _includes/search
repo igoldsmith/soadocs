@@ -25,7 +25,7 @@
 		              <div class="soa-ui-dc-details-box">
 		                <div class="soa-ui-dc-section">
 		                  <h3 class="soa-ui-dc-section-header">
-		                    <a href="{{ site.baseurl }}{{ url }}">{{ title }}</a>
+		                    <a href="{% endraw %}{{ site.baseurl }}{% raw %}{{ url }}">{{ title }}</a>
 		                  </h3>
 		                  <p class="soa-ui-dc-section-paragraph">
 		                    {{ description }}
