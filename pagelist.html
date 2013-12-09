@@ -1,9 +1,12 @@
 ---
-layout: pagelist
+layout: page
 title: Page List
-description: A sorted list of all the pages in the site
+description: A list of all the pages in the site
 categories: none
 navigation: cm-reference-left-nav
+exclude_from_search: true
 ---
 
-<p>No content needed, but here is some anyway<p>
+{% for p in site.pages %}
+	<p>{{ p.title }} - {{ p.url }}</p>
+{% endfor %}
