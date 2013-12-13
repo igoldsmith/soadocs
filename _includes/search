@@ -1,18 +1,23 @@
 			<div class="soa-ui-dc-topsearch-container">
 				<form class="soa-ui-dc-topsearch">
 					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
-					<input type="text" id="search-query" class="search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
 					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
 				</form>
-			</div>
-			<section id="search-results" class="inline-search-div" style="display: none;">
-				<h1 class="soa-ui-dc-content-header">Search Results</h1>
-				<div class="entries">
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
 				</div>
-			</section>
+			</div>
 
 		    {% raw %}
-		    <script id="search-results-template" type="text/mustache">
+		    <script id="soa-control-dc-search-results-template" type="text/mustache">
 		      {{#entries}}
 		        <div class="soa-ui-dc-content-catalog">
 		          <ul class="soa-ui-dc-content-catalog-items">
