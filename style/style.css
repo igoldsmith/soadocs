@@ -345,6 +345,7 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   right: -4px;
   position: absolute;
   top: 81px;
+  z-index: 99;
 }
 .soa-ui-dc-homepage .soa-ui-dc-topsearch-container {
   top: 30px;
@@ -666,10 +667,9 @@ a.soa-ui-dc-container-main-left-nav-item-link {
   position: absolute;
   right: 0;
   top: 29px;
-  z-index: 99;
 }
 .soa-ui-dc-inline-search-div:before {
-  background-image: url(images/pointer.png);
+  background: url(images/pointer.png) no-repeat;
   height: 10px;
   left: auto;
   right: 72px;
@@ -714,10 +714,14 @@ a.soa-ui-dc-container-main-left-nav-item-link {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   background: #333;
   bottom: 0;
+  display: none;
   left: 0;
   opacity: .3;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 98;
+}
+.soa-ui-dc-overlay-visible {
+  display: block;
 }

@@ -24,13 +24,19 @@
   
   var LunrSearch = (function() {
     function LunrSearch(elem, options) {
+      Handlebars.registerHelper('if_eq', function(a, b, opts) {
+        if (a == b) // Or === depending on your needs
+          return opts.fn(this);
+        else
+          return opts.inverse(this);
+        });
       this.$elem = elem;      
       this.$results = $(options.results),
       this.$entries = $(options.entries, this.$results),
       this.indexDataUrl = options.indexUrl;
       this.index = this.createIndex();
-      this.template = this.compileTemplate($(options.template));
-      
+      this.source = $(options.template).html();
+      this.template = this.parseTemplate(this.source);
       this.initialize();
     };
         
@@ -55,8 +61,8 @@
     };
     
     // compile search results template
-    LunrSearch.prototype.compileTemplate = function($template) {      
-      return Mustache.compile($template.text());
+    LunrSearch.prototype.parseTemplate = function($source) {      
+      return Handlebars.compile($source);
     };
         
     // load the search index data
@@ -112,6 +118,7 @@
       if (query.length <= 2) {
         this.$results.hide();
         this.$entries.empty();
+        $('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
       } else {
         var results = $.map(this.index.search(query), function(result) {
           return $.grep(entries, function(entry) { return entry.id === parseInt(result.ref, 10) })[0];
@@ -126,9 +133,12 @@
         $results = this.$results;
         
       $entries.empty();
-      
+      $('#soa-control-dc-overlay').addClass('soa-ui-dc-overlay-visible');
+      $entries.parents('#soa-control-dc-search-results').removeClass('soa-ui-dc-inline-search-div-no-results');
+
       if (entries.length === 0) {
-        $entries.append('<p>Nothing found.</p>')
+        $entries.append('<p class="soa-ui-dc-section-paragraph">Nothing found.</p>')
+        $entries.parents('#soa-control-dc-search-results').addClass('soa-ui-dc-inline-search-div-no-results');
       } else {
         $entries.append(this.template({entries: entries}));
       }
