@@ -160,12 +160,26 @@
     return LunrSearch;
   })();
 
-  $.fn.lunrSearch = function(options) {
+  function async(fn, ctx, params, callback) {
+      setTimeout(function() {
+          fn(ctx, params);
+          if (callback) {callback();}
+      }, 0);
+  }
+
+  function initializeLunr(ctx, options) {
     // apply default options
-    options = $.extend({}, $.fn.lunrSearch.defaults, options);      
+    options = $.extend({}, $.fn.lunrSearch.defaults, options); 
+    new LunrSearch(ctx, options);
+  }
+
+  $.fn.lunrSearch = function(options) {     
 
     // create search object
-    new LunrSearch(this, options);
+    // async(initializeLunr, this, options, function(){console.log('Finished index initialize');
+    //});
+    async(initializeLunr, this, options, null);
+    console.log('After async call');
     
     return this;
   };
