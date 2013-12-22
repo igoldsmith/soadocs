@@ -613,6 +613,7 @@ a.soa-ui-dc-container-main-left-header-link {
   color: #7d7e7f;
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
 }
 .soa-ui-dc-container-main-left-nav-item-selected {
   font-weight: bold;
