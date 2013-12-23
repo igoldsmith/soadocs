@@ -179,7 +179,6 @@
     // async(initializeLunr, this, options, function(){console.log('Finished index initialize');
     //});
     async(initializeLunr, this, options, null);
-    console.log('After async call');
     
     return this;
   };

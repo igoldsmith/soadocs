@@ -169,10 +169,14 @@
 
   function initializeLunr(ctx, options) {
     // apply default options
-    console.log('inside initializeLunr');
+    if (console) {
+      console.log('inside initializeLunr');
+    }
     options = $.extend({}, $.fn.lunrSearch.defaults, options); 
     new LunrSearch(ctx, options);
-    console.log('finished initializeLunr')
+    if (console) {
+      console.log('finished initializeLunr')
+    }
   }
 
   $.fn.lunrSearch = function(options) {     
@@ -181,7 +185,9 @@
     // async(initializeLunr, this, options, function(){console.log('Finished index initialize');
     //});
     async(initializeLunr, this, options, null);
-    console.log('After async call');
+    if (console) {
+      console.log('After async call');
+    }
     
     return this;
   };
