@@ -5,7 +5,9 @@ description: Returns search results for a specified string.
 product: cm
 category: ref
 nav-title: GET&nbsp;search
-no-nav: true
+no-nav: api
+sub-nav: true
+sub-nav-class: search
 no-catalog: true
 ---
 
@@ -39,7 +41,7 @@ no-catalog: true
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/search?{q}={SearchExpression}&amp;sort={sort}&amp;sortBy={sortBy}&amp;start={start}&amp;count={count}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/search?{q}={SearchExpression}&amp;sort={sort}&amp;sortBy={sortBy}&amp;start={start}&amp;count={count}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -47,7 +49,7 @@ no-catalog: true
 <p id="id_samplerequest">The example below shows a search on the search term &quot;payments&quot; requesting the first two responses.</p>
 <p><strong>Request URL</strong></p>
 <pre><span class="apidoc_div_codeendpoint"></span>
-https://open.soa.com/api/search?count=20&amp;start=0&amp;q=type:API%20AND%20ACME%20-Payments&amp;_=1368214917795</pre>
+https://&lt;hostname&gt;/api/search?count=20&amp;start=0&amp;q=type:API%20AND%20ACME%20-Payments&amp;_=1368214917795</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
