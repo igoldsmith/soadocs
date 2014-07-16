@@ -4,6 +4,7 @@
             <link rel="stylesheet" href="{{ site.baseurl }}/style/base.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/style.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/document.css" type="text/css">
+            <link rel="stylesheet" href="{{ site.baseurl }}/style/pygments.css" type="text/css">
             <!-- <link rel="stylesheet" href="{{ site.baseurl }}/style/site.min.css" type="text/css" media="screen" /> -->
             <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
             <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
